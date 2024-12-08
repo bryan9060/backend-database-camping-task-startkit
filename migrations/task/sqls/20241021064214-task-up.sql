@@ -91,6 +91,7 @@ INSERT INTO "CREDIT_PURCHASE" (user_id, credit_package_id,purchased_credits, pri
     -- 1. 將用戶`李燕容`新增為教練，並且年資設定為2年（提示：使用`李燕容`的email ，取得 `李燕容` 的 `id` ）
     -- 2. 將用戶`肌肉棒子`新增為教練，並且年資設定為2年
     -- 3. 將用戶`Q太郎`新增為教練，並且年資設定為2年
+
 insert into "COACH" (user_id, experience_years) values 
 (
 (select id from "USER" where email = 'lee2000@hexschooltest.io'),
@@ -109,7 +110,7 @@ insert into "COACH" (user_id, experience_years) values
     -- 1. 所有教練都有 `重訓` 專長
     -- 2. 教練`肌肉棒子` 需要有 `瑜伽` 專長
     -- 3. 教練`Q太郎` 需要有 `有氧運動` 與 `復健訓練` 專長
-insert into "coach_link_skill" (coach_id, skill_id)
+insert into "COACH_LINK_SKILL" (coach_id, skill_id)
 values (
 	(select id from "coach" where user_id = (select id from "user" where email = 'lee2000@hexschooltest.io' )),
 	(select id from "skill" where name = '重訓')
